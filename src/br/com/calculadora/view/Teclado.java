@@ -15,11 +15,15 @@ public class Teclado extends JPanel{
 		GridBagLayout layout = new GridBagLayout();
 		GridBagConstraints c = new GridBagConstraints();
 		
+		c.weightx = 1;
+		c.weighty = 1;
 		setLayout(layout);
 		
+		c.fill = GridBagConstraints.BOTH;
+		
+		c.gridwidth = 3;
 		adicionarBotao("AC", CINZA_ESCURO,c , 0, 0);
-		adicionarBotao("+/-", CINZA_ESCURO,c , 1, 0);
-		adicionarBotao("%", CINZA_ESCURO,c , 2, 0);
+		c.gridwidth = 1;
 		adicionarBotao("/", LARANJA,c , 3, 0);
 		
 		adicionarBotao("7", CINZA_CLARO,c , 0, 1);
@@ -27,9 +31,9 @@ public class Teclado extends JPanel{
 		adicionarBotao("9", CINZA_CLARO,c , 2,1);
 		adicionarBotao("*", LARANJA,c , 3, 1);
 		
-		adicionarBotao("6", CINZA_ESCURO,c , 0, 2);
-		adicionarBotao("5", CINZA_ESCURO,c , 1, 2);
-		adicionarBotao("4", CINZA_ESCURO,c , 2, 2);
+		adicionarBotao("6", CINZA_CLARO,c , 0, 2);
+		adicionarBotao("5", CINZA_CLARO,c , 1, 2);
+		adicionarBotao("4", CINZA_CLARO,c , 2, 2);
 		adicionarBotao("-", LARANJA,c , 3, 2);
 		
 		adicionarBotao("3", CINZA_CLARO,c , 0, 3);
@@ -37,8 +41,9 @@ public class Teclado extends JPanel{
 		adicionarBotao("1", CINZA_CLARO,c , 2,3);
 		adicionarBotao("+", LARANJA,c , 3, 3);
 		
+		c.gridwidth = 2;
 		adicionarBotao("0", CINZA_CLARO,c , 0, 4);
-		adicionarBotao("0", CINZA_CLARO,c , 1, 4);
+		c.gridwidth = 1;
 		adicionarBotao(",", LARANJA,c , 2,4);
 		adicionarBotao("=", LARANJA,c , 3, 4);
 		

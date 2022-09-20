@@ -2,6 +2,9 @@ package br.com.calculadora.view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import br.com.calculadora.modelo.Memoria;
+
 import java.awt.*;
 @SuppressWarnings("serial")
 public class Display extends JPanel{
@@ -10,10 +13,10 @@ public class Display extends JPanel{
 	
 	public Display() {
 		setBackground(new Color(46,49,50));
-		textDisplay.setText("1234,56");
+		textDisplay.setText(Memoria.getInstancia().getTextoAtual());
 		textDisplay.setForeground(Color.WHITE);
 		setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 25));
 		
-		add(textDisplay);
+		add(textDisplay);   
 	}
 }

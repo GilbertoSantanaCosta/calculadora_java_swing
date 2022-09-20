@@ -1,10 +1,14 @@
 package br.com.calculadora.view;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.*;
 
 @SuppressWarnings("serial")
-public class Teclado extends JPanel{
+public class Teclado extends JPanel implements ActionListener{
 
 	private final Color CINZA_ESCURO = new Color(68,68,68);
 	private final Color CINZA_CLARO = new Color(99,99,99);
@@ -58,7 +62,17 @@ public class Teclado extends JPanel{
 		c.gridx = x;
 		c.gridy = y;
 		Botao botao = new Botao(text, cor);
+		botao.addActionListener(this);
 		add(botao , c);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() instanceof Botao) {
+			JButton botao = (JButton) e.getSource();
+			System.out.println(botao.getText());
+		}
+		
 	}
 	
 	

@@ -3,6 +3,8 @@ package br.com.calculadora.view;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import br.com.calculadora.modelo.Memoria;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
@@ -70,8 +72,7 @@ public class Teclado extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof Botao) {
 			JButton botao = (JButton) e.getSource();
-			System.out.println(botao.getText());
-		}
+			Memoria.getInstancia().processarComando(botao.getText());		}
 		
 	}
 	
